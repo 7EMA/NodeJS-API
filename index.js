@@ -38,8 +38,8 @@ app.post("/products", (req, res) => {
     res.send(products)
 })
 // add product to shopping cart 
-app.post("/products", (req, res) => {
-    shoopingCart.push(res.body)
+app.post("/products/shoppingCart", (req, res) => {
+    shoopingCart.push(products.filter(el => el.id === req.params.id))
     res.send(shoopingCart)
 })
 
